@@ -1,7 +1,7 @@
-import re
 import clipboard
 import keyboard
 import time
+
 
 while True:
     Antwort = input("1. Basis oder 2. VisualStudioCode-Regex?    Gebe 1 oder 2 ein um deine Antwort zu geben!")
@@ -13,17 +13,16 @@ while True:
     if Antwort == 1:
         Antwort = 0
     elif Antwort == 2:
-        Antwort == 1
+        Antwort = 1
     else:
         print("bitte gebe entweder 1 für AdminTool ein oder 2 für VisualStudioCode (2nd und 3rd Level)")
-    if Antwort == 0 or Antwort == 1:
+    if Antwort == 0 or Antwort == 1 or Antwort == 2:
         print("hi")
         break
     else:
         pass
         
 print("\n\n\n\n\n\n\n\n\n\n\n\n\n\nTool kann nun genutzt werden!")
-
 
 
 
