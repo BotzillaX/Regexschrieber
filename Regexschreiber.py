@@ -22,7 +22,7 @@ while True:
     else:
         pass
         
-print("\n\n\n\n\n\n\n\n\n\nTool kann nun genutzt werden!")
+print("\n\n\n\n\n\n\n\n\n\n\n\n\n\nTool kann nun genutzt werden!")
 
 
 
@@ -37,7 +37,7 @@ if Antwort == 0:  #AdminTool
                 result += "([\\s]?)"
             elif letter in ["ä", "Ä", "ö", "Ö", "ü", "Ü"]:
                 result += "(.|..)"
-            elif letter in "!\"#$%&'()*+,-./:;<=>?@[\\]^_`–{|}~":
+            elif letter in "!\"#$%&'()*+,-./:;<=>?@[\\]^_`–{|}~€£¥©®°∞∑√±×÷<>≤≥≠≈≡≅≫≪∫∏∈∉∋∀∃∴∵∧∨¬∩∪⊕⊗⊥⌈⌉⌊⌋〈〉◯◻△▲▽▼◀▶↖↗↙↘∠∟∡∢∣∥⊂⊃⊆⊇⊈⊉⊊⊋★☆☉♀♂☼☽☾♠♣♥♦♪♫♯":
                 result += "."
             else:
                 result += letter
@@ -85,14 +85,13 @@ if Antwort == 1:#VisualStudioCode
 
 
     while True:
-        time.sleep(0.002)
+        time.sleep(0.006) #chance sollte höher als 98% sein, dass "keyboard.is_pressed" greift
         if keyboard.is_pressed("ctrl+alt+shift"):
-            time.sleep(0.6)
+            time.sleep(0.3) #because after copying people need some time before they reach ctrl+alt+shift with their hands // delay is needed for input_str = clipboard.paste() to get the right string
             result = ""
             input_str = clipboard.paste()
-            print(input_str)
             customized_str = customize_string(input_str)
             print("Originaler String:", input_str)
             print("Angepasster String:", customized_str)
             clipboard.copy(customized_str)
-            time.sleep(0.7)
+            time.sleep(1)
