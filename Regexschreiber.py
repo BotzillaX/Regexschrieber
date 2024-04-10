@@ -33,7 +33,7 @@ if Antwort == 0:  #AdminTool
         while i < len(input_string):
             letter = input_string[i]
             if letter == " ":
-                result += "([\\s]?)"
+                result += "([\\s]?)([\\s]?)"
             elif letter in ["ä", "Ä", "ö", "Ö", "ü", "Ü"]:
                 result += "(.|..)"
             elif letter in "!\"#$%&'()*+,-./:;<=>?@[\\]^_`–{|}~€£¥©®°∞∑√±×÷<>≤≥≠≈≡≅≫≪∫∏∈∉∋∀∃∴∵∧∨¬∩∪⊕⊗⊥⌈⌉⌊⌋〈〉◯◻△▲▽▼◀▶↖↗↙↘∠∟∡∢∣∥⊂⊃⊆⊇⊈⊉⊊⊋★☆☉♀♂☼☽☾♠♣♥♦♪♫♯":
@@ -66,7 +66,7 @@ if Antwort == 1:#VisualStudioCode
         while i < len(input_string):
             letter = input_string[i]
             if letter == " ":
-                result += "([\\\s]?)"
+                result += "([\\\s]?)([\\\s]?)"
             elif letter == "\\":
                 if i + 1 < len(input_string) and input_string[i + 1] == "n":
                     result += "([\\\s]?)"
