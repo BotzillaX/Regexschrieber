@@ -14,8 +14,10 @@ while True:
         Antwort = 0
     elif Antwort == 2:
         Antwort = 1
+    elif Antwort == 3:
+        Antwort = 2
     else:
-        print("bitte gebe entweder 1 für AdminTool ein oder 2 für VisualStudioCode (2nd und 3rd Level)")
+        print("bitte gebe entweder 1 für AdminTool ein oder 2 für VisualStudioCode (2nd und 3rd Level) oder alten Regex fixen 3")
     if Antwort == 0 or Antwort == 1 or Antwort == 2:
         print("hi")
         break
@@ -32,7 +34,7 @@ if Antwort == 0:  #AdminTool
         i = 0
         while i < len(input_string):
             letter = input_string[i]
-            if letter == " ":
+            if letter == " " or letter == " ":
                 result += "([\\s]?)"
             elif letter in ["ä", "Ä", "ö", "Ö", "ü", "Ü", "ß"]:
                 result += "(.|..)"
@@ -65,7 +67,7 @@ if Antwort == 1:#VisualStudioCode
         i = 0
         while i < len(input_string):
             letter = input_string[i]
-            if letter == " ":
+            if letter == " " or letter == " ":
                 result += "([\\\s]?)"
             elif letter == "\\":
                 if i + 1 < len(input_string) and input_string[i + 1] == "n":
@@ -94,3 +96,30 @@ if Antwort == 1:#VisualStudioCode
             print("Angepasster String:", customized_str)
             clipboard.copy(customized_str)
             time.sleep(1)
+
+
+
+if Antwort == 2:  # AdminTool
+    def customize_string(input_string):
+        result = ""
+        i = 0
+        while i < len(input_string):
+            if input_string[i] == " " or input_string[i] == " ":
+                result += "([\\s]?)"
+            else:
+                result += input_string[i]
+            i += 1
+        return result
+
+    while True:
+        time.sleep(0.002)
+        if keyboard.is_pressed("ctrl+alt+shift"):
+            time.sleep(0.6)
+            result = ""
+            input_str = clipboard.paste()
+            print(input_str)
+            customized_str = customize_string(input_str)
+            print("Originaler String:", input_str)
+            print("Angepasster String:", customized_str)
+            clipboard.copy(customized_str)
+            time.sleep(0.7)
