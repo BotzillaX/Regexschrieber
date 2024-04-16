@@ -3,8 +3,13 @@ import keyboard
 import time
 
 
+
+
+
+
+
 while True:
-    Antwort = input("1. Basis oder 2. VisualStudioCode-Regex?    Gebe 1 oder 2 ein um deine Antwort zu geben!")
+    Antwort = input("1. Basis, 2. VisualStudioCode-Regex oder Regex fixen?    Gebe 1 oder 2 ein um deine Antwort zu geben!")
     try:
         Antwort = int(Antwort)
     except:
@@ -50,7 +55,6 @@ if Antwort == 0:  #AdminTool
         time.sleep(0.002)
         if keyboard.is_pressed("ctrl+alt+shift"):
             time.sleep(0.6)
-            result = ""
             input_str = clipboard.paste()
             print(input_str)
             customized_str = customize_string(input_str)
@@ -89,7 +93,6 @@ if Antwort == 1:#VisualStudioCode
         time.sleep(0.006) #chance sollte höher als 98% sein, dass "keyboard.is_pressed" greift
         if keyboard.is_pressed("ctrl+alt+shift"):
             time.sleep(0.3) #because after copying people need some time before they reach ctrl+alt+shift with their hands // delay is needed for input_str = clipboard.paste() to get the right string
-            result = ""
             input_str = clipboard.paste()
             customized_str = customize_string(input_str)
             print("Originaler String:", input_str)
@@ -104,18 +107,24 @@ if Antwort == 2:  # AdminTool
         result = ""
         i = 0
         while i < len(input_string):
-            if input_string[i] == " " or input_string[i] == " ":
+            if input_string[i] == " " or input_string[i] == " ":
                 result += "([\\s]?)"
+            elif input_string[i] == "(" and input_string[i + 1] == "." and input_string[i + 2] == "|"and input_string[i + 3] == "."and input_string[i + 4] == "."and input_string[i + 5] == ")":
+                result += "([\\s\\S]*?)"
+                i += 5
+            elif input_string[i] in "äöüßÄÖÜ":
+                result += "([\\s\\S]*?)"
             else:
                 result += input_string[i]
             i += 1
         return result
 
+
+
     while True:
         time.sleep(0.002)
         if keyboard.is_pressed("ctrl+alt+shift"):
             time.sleep(0.6)
-            result = ""
             input_str = clipboard.paste()
             print(input_str)
             customized_str = customize_string(input_str)
@@ -123,3 +132,7 @@ if Antwort == 2:  # AdminTool
             print("Angepasster String:", customized_str)
             clipboard.copy(customized_str)
             time.sleep(0.7)
+
+
+#ich([\s]?)bin([\s]?)f(.|..)r([\s]?)deutschland 
+#ich([\s]?)bin([\s]?)f([\s\S]*?)r([\s]?)deutschland([\s]?)
