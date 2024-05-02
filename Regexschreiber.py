@@ -42,9 +42,9 @@ if Antwort == 0:  #AdminTool
             if letter == " " or letter == " ":
                 result += "([\\s]?)"
             elif letter in ["ä", "Ä", "ö", "Ö", "ü", "Ü", "ß"]:
-                result += "(.|..)"
+                result += "([\\s\\S]*?)"
             elif letter in "!\"#$%&'()*+,-./:;<=>?@[\\]^_`–{|}~€£¥©®°∞∑√±×÷<>≤≥≠≈≡≅≫≪∫∏∈∉∋∀∃∴∵∧∨¬∩∪⊕⊗⊥⌈⌉⌊⌋〈〉◯◻△▲▽▼◀▶↖↗↙↘∠∟∡∢∣∥⊂⊃⊆⊇⊈⊉⊊⊋★☆☉♀♂☼☽☾♠♣♥♦♪♫♯":
-                result += "."
+                result += "([\\s\\S]*?)"
             else:
                 result += letter
             i += 1
@@ -56,7 +56,6 @@ if Antwort == 0:  #AdminTool
         if keyboard.is_pressed("ctrl+alt+shift"):
             time.sleep(0.6)
             input_str = clipboard.paste()
-            print(input_str)
             customized_str = customize_string(input_str)
             print("Originaler String:", input_str)
             print("Angepasster String:", customized_str)
@@ -126,7 +125,6 @@ if Antwort == 2:  # AdminTool
         if keyboard.is_pressed("ctrl+alt+shift"):
             time.sleep(0.6)
             input_str = clipboard.paste()
-            print(input_str)
             customized_str = customize_string(input_str)
             print("Originaler String:", input_str)
             print("Angepasster String:", customized_str)
@@ -136,3 +134,7 @@ if Antwort == 2:  # AdminTool
 
 #ich([\s]?)bin([\s]?)f(.|..)r([\s]?)deutschland 
 #ich([\s]?)bin([\s]?)f([\s\S]*?)r([\s]?)deutschland([\s]?)
+
+
+
+#verbessere mir den text und mache diesen professioneller und freundlicher. spreche in "du"-form und beginne nicht damit guten morgen zu wünschen, sondern fange direkt an mit der verbesserung
