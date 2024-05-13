@@ -132,9 +132,4 @@ if Antwort == 2:  # AdminTool
             time.sleep(0.7)
 
 
-#ich([\s]?)bin([\s]?)f(.|..)r([\s]?)deutschland 
-#ich([\s]?)bin([\s]?)f([\s\S]*?)r([\s]?)deutschland([\s]?)
 
-
-
-#verbessere mir den text und mache diesen professioneller und freundlicher. spreche in "du"-form und beginne nicht damit guten morgen zu wünschen, sondern fange direkt an mit der verbesserung
