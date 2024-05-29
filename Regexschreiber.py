@@ -42,14 +42,13 @@ if Antwort == 0:  #AdminTool
             if letter == " " or letter == " ":
                 result += "([\\s]?)"
             elif letter in ["ä", "Ä", "ö", "Ö", "ü", "Ü", "ß"]:
-                result += "([\\s\\S]*?)"
+                result += "(.|..)"
             elif letter in "!\"#$%&'()*+,-./:;<=>?@[\\]^_`–{|}~€£¥©®°∞∑√±×÷<>≤≥≠≈≡≅≫≪∫∏∈∉∋∀∃∴∵∧∨¬∩∪⊕⊗⊥⌈⌉⌊⌋〈〉◯◻△▲▽▼◀▶↖↗↙↘∠∟∡∢∣∥⊂⊃⊆⊇⊈⊉⊊⊋★☆☉♀♂☼☽☾♠♣♥♦♪♫♯":
-                result += "([\\s\\S]*?)"
+                result += "."
             else:
                 result += letter
             i += 1
         return "([\\s\\S]*?)"+result
-
 
     while True:
         time.sleep(0.002)
@@ -108,11 +107,10 @@ if Antwort == 2:  # AdminTool
         while i < len(input_string):
             if input_string[i] == " " or input_string[i] == " ":
                 result += "([\\s]?)"
-            elif input_string[i] == "(" and input_string[i + 1] == "." and input_string[i + 2] == "|"and input_string[i + 3] == "."and input_string[i + 4] == "."and input_string[i + 5] == ")":
-                result += "([\\s\\S]*?)"
-                i += 5
             elif input_string[i] in "äöüßÄÖÜ":
-                result += "([\\s\\S]*?)"
+                result += "(.|..)"
+            elif input_string[i] in "!\"#$%&'()*+,-./:;<=>?@[\\]^_`–{|}~€£¥©®°∞∑√±×÷<>≤≥≠≈≡≅≫≪∫∏∈∉∋∀∃∴∵∧∨¬∩∪⊕⊗⊥⌈⌉⌊⌋〈〉◯◻△▲▽▼◀▶↖↗↙↘∠∟∡∢∣∥⊂⊃⊆⊇⊈⊉⊊⊋★☆☉♀♂☼☽☾♠♣♥♦♪♫♯":
+                result += "."
             else:
                 result += input_string[i]
             i += 1
