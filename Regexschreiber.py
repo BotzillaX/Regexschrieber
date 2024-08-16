@@ -119,7 +119,7 @@ if Antwort == 2:  # AdminTool
     while True:
         time.sleep(0.002)
         if keyboard.is_pressed("ctrl+alt+shift"):
-            time.sleep(0.6)
+            time.sleep(0.1)
             input_str = clipboard.paste()
             customized_str = customize_string(input_str)
             print("Originaler String:", input_str)
