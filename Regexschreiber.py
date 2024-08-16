@@ -109,8 +109,6 @@ if Antwort == 2:  # AdminTool
                 result += "([\\s]?)"
             elif input_string[i] in "äöüßÄÖÜ":
                 result += "(.|..)"
-            elif input_string[i] in "!\"#$%&'()*+,-./:;<=>?@[\\]^_`–{|}~€£¥©®°∞∑√±×÷<>≤≥≠≈≡≅≫≪∫∏∈∉∋∀∃∴∵∧∨¬∩∪⊕⊗⊥⌈⌉⌊⌋〈〉◯◻△▲▽▼◀▶↖↗↙↘∠∟∡∢∣∥⊂⊃⊆⊇⊈⊉⊊⊋★☆☉♀♂☼☽☾♠♣♥♦♪♫♯":
-                result += "."
             else:
                 result += input_string[i]
             i += 1
